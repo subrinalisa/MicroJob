@@ -19,6 +19,7 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -1852,7 +1853,6 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card">
@@ -1878,116 +1878,285 @@
                                                         data-bs-toggle="pill" data-bs-target="#pills-info-desc"
                                                         type="button">2</button>
                                                 </li>
-
                                                 <li class="nav-item">
                                                     <button class="nav-link rounded-pill"
                                                         data-progressbar="custom-progress-bar" id="pills-success-tab"
                                                         data-bs-toggle="pill" data-bs-target="#pills-success"
                                                         type="button">3</button>
                                                 </li>
+                                                <li class="nav-item">
+                                                    <button class="nav-link rounded-pill"
+                                                        data-progressbar="custom-progress-bar" id="budget"
+                                                        data-bs-toggle="pill" data-bs-target="#budget-setting"
+                                                        type="button">4</button>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="pills-gen-info" role="tabpanel"
-                                                aria-labelledby="pills-gen-info-tab">
+                                            <div class="tab-pane fade show active" id="pills-gen-info">
                                                 <div>
                                                     <div class="mb-4">
                                                         <div>
                                                             <h5 class="mb-1">Select Location</h5>
                                                         </div>
                                                     </div>
+                                                    <ul class="list-inline nav mb-3 location-category">
+                                                        <li class="list-inline-item mb-2">
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-outline-primary active"
+                                                                data-bs-toggle="tab" data-bs-target="#international">
+                                                                <div class="form-check-inline">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio"
+                                                                            class="form-check-input d-none"
+                                                                            name="location-category">International
+                                                                    </label>
+                                                                </div>
+                                                            </button>
+                                                        </li>
+                                                        <li class="list-inline-item mb-2">
+                                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                                data-bs-toggle="tab" data-bs-target="#asia">
+                                                                <div class="form-check-inline">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio"
+                                                                            class="form-check-input d-none"
+                                                                            name="location-category">Asia
+                                                                    </label>
+                                                                </div>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content location-sub-category">
+                                                        <hr>
+                                                        <h6 class="mb-3">Select Country</h6>
+                                                        <div class="tab-pane show active" id="international">
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="checkbox"
+                                                                                class="form-check-input d-none"
+                                                                                name="subsubloc">Albania
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="checkbox"
+                                                                                class="form-check-input d-none"
+                                                                                name="subsubloc">Pakistan
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- /for loop -->
+                                                        <div class="tab-pane" id="asia">
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="checkbox"
+                                                                                class="form-check-input d-none"
+                                                                                name="subsubloc">Bangladesh
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="checkbox"
+                                                                                class="form-check-input d-none"
+                                                                                name="subsubloc">China
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="checkbox"
+                                                                                class="form-check-input d-none"
+                                                                                name="subsubloc">India
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Job Category -->
+                                            <div class="tab-pane fade" id="pills-info-desc">
+                                                <div>
+                                                    <div class="mb-4">
+                                                        <div>
+                                                            <h5 class="mb-1">Select Job Category</h5>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="list-inline nav mb-3">
+                                                        <li class="list-inline-item mb-2">
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-outline-primary active"
+                                                                data-bs-toggle="tab" data-bs-target="#assignment">
+                                                                <div class="form-check-inline">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio"
+                                                                            class="form-check-input d-none"
+                                                                            name="job-category">Assignment
+                                                                    </label>
+                                                                </div>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content job-sub-category">
+                                                        <hr>
+                                                        <h6 class="mb-3">Select Sub Category</h6>
+                                                        <div class="tab-pane show active" id="assignment">
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio"
+                                                                                class="form-check-input d-none"
+                                                                                name="subcat">Assignment (300 words)
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                                <li class="list-inline-item mb-3">
+                                                                    <button type="button" class="btn btn-sm btn-light">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio"
+                                                                                class="form-check-input d-none"
+                                                                                name="subcat">Assignment (500 words)
+                                                                        </label>
+                                                                    </button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Job Information -->
+                                            <div class="tab-pane fade" id="pills-success">
+                                                <div>
+                                                    <div class="mb-4">
+                                                        <div>
+                                                            <h5 class="mb-1">Job Information</h5>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
                                                     <div class="row">
-                                                        <div class="col-lg-6">
+                                                        <div class="col-md-6">
                                                             <div class="mb-3">
-                                                                <label class="form-label"
-                                                                    for="gen-info-email-input">Email</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="gen-info-email-input" placeholder="Enter Email">
+                                                                <label class="form-label">Job Title <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" required>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-md-6">
                                                             <div class="mb-3">
-                                                                <label class="form-label"
-                                                                    for="gen-info-username-input">User Name</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="gen-info-username-input"
-                                                                    placeholder="Enter User Name">
+                                                                <label>Upload Related File</label>
+                                                                <input type="file" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label>What specific tasks need to be Completed? <span
+                                                                        class="text-danger">*</span></label>
+                                                                <textarea class="form-control" rows="3"
+                                                                    placeholder="Write here..." required></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label>Required proof the job was Completed <span
+                                                                        class="text-danger">*</span></label>
+                                                                <textarea class="form-control" rows="3"
+                                                                    placeholder="Write here..." required></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label>Thumbnail Image</label>
+                                                                <input type="file" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label"
-                                                            for="gen-info-password-input">Password</label>
-                                                        <input type="password" class="form-control"
-                                                            id="gen-info-password-input" placeholder="Enter Password">
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-start gap-3 mt-4">
-                                                    <button type="button" class="btn btn-success btn-label right ms-auto nexttab
-nexttab" data-nexttab="pills-info-desc-tab"><i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Go to
-                                                        more info</button>
                                                 </div>
                                             </div>
-                                            <!-- end tab pane -->
-                                            <div class="tab-pane fade" id="pills-info-desc" role="tabpanel"
-                                                aria-labelledby="pills-info-desc-tab">
-                                                <div>
-                                                    <div class="text-center">
-                                                        <div
-                                                            class="profile-user position-relative d-inline-block mx-auto mb-2">
-                                                            <img src="assets/images/users/user-dummy-img.jpg"
-                                                                class="rounded-circle avatar-lg img-thumbnail user-profile-image"
-                                                                alt="user-profile-image">
-                                                            <div
-                                                                class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                                                <input id="profile-img-file-input" type="file"
-                                                                    class="profile-img-file-input"
-                                                                    accept="image/png, image/jpeg">
-                                                                <label for="profile-img-file-input"
-                                                                    class="profile-photo-edit avatar-xs">
-                                                                    <span
-                                                                        class="avatar-title rounded-circle bg-light text-body">
-                                                                        <i class="ri-camera-fill"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <h5 class="fs-14">Add Image</h5>
-                                                    </div>
+                                            <!-- Budget & Setting -->
+                                            <div class="tab-pane fade" id="budget-setting">
+                                                <div class="mb-4">
                                                     <div>
-                                                        <label class="form-label"
-                                                            for="gen-info-description-input">Description</label>
-                                                        <textarea class="form-control" placeholder="Enter Description"
-                                                            id="gen-info-description-input" rows="2"></textarea>
+                                                        <h5 class="mb-1">Budget & Setting</h5>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex align-items-start gap-3 mt-4">
-                                                    <button type="button"
-                                                        class="btn btn-link text-decoration-none btn-label previestab"
-                                                        data-previous="pills-gen-info-tab"><i
-                                                            class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                                        Back to General</button>
-                                                    <button type="button" class="btn btn-success btn-label right ms-auto nexttab
-nexttab" data-nexttab="pills-success-tab"><i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>Submit</button>
-                                                </div>
-                                            </div>
-                                            <!-- end tab pane -->
-                                            <div class="tab-pane fade" id="pills-success" role="tabpanel"
-                                                aria-labelledby="pills-success-tab">
-                                                <div>
-                                                    <div class="text-center">
-                                                        <div class="mb-4">
-                                                            <lord-icon src="https://cdn.lordicon.com/lupuorrc.json"
-                                                                trigger="loop"
-                                                                colors="primary:#0ab39c,secondary:#405189"
-                                                                style="width:120px;height:120px"></lord-icon>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Worker Need <span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input type="number" class="form-control"
+                                                                        placeholder="Enter here..." required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label>Each worker Earn <span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input type="number" class="form-control"
+                                                                        placeholder="Enter here..." required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label>Require Screenshots <span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input type="number" class="form-control"
+                                                                        placeholder="Enter here..." required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label>Estimated Day <span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input type="number" class="form-control"
+                                                                        placeholder="Enter here..." required>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <h5>Well Done !</h5>
-                                                        <p class="text-muted">You have Successfully Signed Up</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="card border">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title fw-bold text-center">Estimated Job
+                                                                    Cost</h5>
+                                                                <div class="input-group mb-3">
+                                                                    <span class="input-group-text">$</span>
+                                                                    <input type="number" class="form-control"
+                                                                        placeholder="Enter here..." disabled>
+                                                                </div>
+                                                                <p class="text-danger text-center">Minimum spend $0.80
+                                                                </p>
+                                                                <div class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-warning">Please
+                                                                        Deposit</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="text-end">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                        data-bs-target="#success-msg">Submit</button>
+                                                </div>
                                             </div>
-                                            <!-- end tab pane -->
                                         </div>
                                         <!-- end tab content -->
                                     </form>
@@ -2025,6 +2194,25 @@ nexttab" data-nexttab="pills-success-tab"><i class="ri-arrow-right-line label-ic
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
     </button>
+    <!-- Modal -->
+    <div class="modal fade" id="success-msg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <img src="./assets/success.gif" class="img-fluid">
+                    <div class="mt-4">
+                        <h4 class="mb-3">Thank You !</h4>
+                        <p class="text-muted mb-4">Your submission has been sent.</p>
+                        <div class="hstack gap-2 justify-content-center">
+                            <a href="javascript:void(0);" class=" btn btn-success" data-bs-dismiss="modal"><i
+                                    class="ri-close-line me-1 align-middle"></i> Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- JAVASCRIPT -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-1.12.4.js"></script>
@@ -2033,6 +2221,7 @@ nexttab" data-nexttab="pills-success-tab"><i class="ri-arrow-right-line label-ic
     <script src="assets/libs/feather-icons/feather.min.js"></script>
     <!-- form wizard init -->
     <script src="assets/js/pages/form-wizard.init.js"></script>
+    <script src="assets/form-widget.js"></script>
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 </body>
