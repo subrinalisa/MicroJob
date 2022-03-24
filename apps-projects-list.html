@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg">
+
 <head>
     <meta charset="utf-8" />
     <title>Project List</title>
@@ -18,8 +19,19 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
+    <div id="preloader">
+        <div class="loader-wrap">
+            <div class="loader">
+                <div class="dots">
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Begin page -->
     <div id="layout-wrapper">
         <header id="page-topbar">
@@ -2069,6 +2081,7 @@
         <i class="ri-arrow-up-line"></i>
     </button>
     <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery-1.12.4.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -2079,6 +2092,11 @@
     <script src="assets/js/pages/project-list.init.js"></script>
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+    <script>
+        jQuery(window).on('load', function () {
+            jQuery("#preloader").delay(250).fadeOut(250);
+        });
+    </script>
 </body>
-<!-- Mirrored from themesbrand.com/velzon/html/default/apps-projects-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Mar 2022 03:48:48 GMT -->
+
 </html>
