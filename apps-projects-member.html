@@ -2029,26 +2029,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <span class="text-success">Work Rating</span>
-                        </li>
-                        <li class="list-inline-item">
-                            <button type="button" class="btn p-0"><i class='bx bxs-star text-warning'></i></button>
-                        </li>
-                        <li class="list-inline-item">
-                            <button type="button" class="btn p-0"><i class='bx bxs-star text-warning'></i></button>
-                        </li>
-                        <li class="list-inline-item">
-                            <button type="button" class="btn p-0"><i class='bx bxs-star text-warning'></i></button>
-                        </li>
-                        <li class="list-inline-item">
-                            <button type="button" class="btn p-0"><i class='bx bxs-star text-warning'></i></button>
-                        </li>
-                        <li class="list-inline-item">
-                            <button type="button" class="btn p-0"><i class='bx bxs-star text-warning'></i></button>
-                        </li>
-                    </ul>
+                    <div class="live-preview">
+                        <ul class="list-inline">
+                            <li class="list-inline-item align-top">Basic Rater</li>
+                            <li class="list-inline-item">
+                                <div id="basic-rater" dir="ltr"></div>
+                            </li>
+                        </ul>
+                        <!-- end table responsive -->
+                    </div>
                     <div class="row">
                         <div class="col-md-12 mb-3 border">
                             <img src="./assets/images/1646205185.jpg" class="img-fluid d-block w-100" alt="">
@@ -2057,12 +2046,22 @@
                             <img src="./assets/images/1646205185.jpg" class="img-fluid d-block w-100" alt="">
                         </div>
                     </div>
-                    <ul class="list-inline text-center mt-3">
+                    <ul class="list-inline text-center review-btn mt-3">
                         <li class="list-inline-item">
-                            <button type="button" class="btn btn-sm btn-outline-dark">Satisfied</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input d-none" id="satisfied"
+                                        name="hitone">Satisfied
+                                </label>
+                            </button>
                         </li>
                         <li class="list-inline-item">
-                            <button type="button" class="btn btn-sm btn-outline-dark">Unsatisfied</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input d-none" id="unsatisfied"
+                                        name="hitone">Unsatisfied
+                                </label>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -2084,11 +2083,33 @@
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/pages/project-overview.init.js"></script>
+    <!-- rater-js plugin -->
+    <script src="assets/libs/rater-js/index.js"></script>
+    <!-- rating init -->
+    <script src="assets/js/pages/rating.init.js"></script>
     <!-- App js -->
     <script src="assets/js/app.js"></script>
     <script>
         jQuery(window).on('load', function () {
             jQuery("#preloader").delay(250).fadeOut(250);
+        });
+        $("#satisfied").click(function () {
+            console.log($(this).prop('checked'));
+            if ($(this).prop('checked')) {
+                $(this).closest('button').addClass("btn-info");
+                $('#unsatisfied').closest('button').removeClass("btn-info");
+            } else {
+                $(this).closest('button').removeClass("btn-info");
+            }
+        });
+        $("#unsatisfied").click(function () {
+            console.log($(this).prop('checked'));
+            if ($(this).prop('checked')) {
+                $(this).closest('button').addClass("btn-info");
+                $('#satisfied').closest('button').removeClass("btn-info");
+            } else {
+                $(this).closest('button').removeClass("btn-info");
+            }
         });
     </script>
 </body>
