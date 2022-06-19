@@ -8,11 +8,6 @@ document.querySelectorAll(".form-steps").forEach(function (n) {
             var e = t.getAttribute("data-nexttab");
             document.getElementById(e).click()
         })
-    }), n.querySelectorAll(".previestab").forEach(function (r) {
-        r.addEventListener("click", function () {
-            for (var e = r.getAttribute("data-previous"), t = r.closest("form").querySelectorAll(".custom-nav .done").length, o = t - 1; o < t; o++) r.closest("form").querySelectorAll(".custom-nav .done")[o] && r.closest("form").querySelectorAll(".custom-nav .done")[o].classList.remove("done");
-            document.getElementById(e).click()
-        })
     });
     var l = n.querySelectorAll('button[data-bs-toggle="pill"]');
     l.forEach(function (o, r) {
